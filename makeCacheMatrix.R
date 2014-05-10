@@ -1,12 +1,12 @@
 makeCacheMatrix <- function(x = numeric()) {
-  s <- NULL
+  val <- NULL # value set to !NA
   set <- function(y) {
     x <<- y
-    s <<- NULL
+    val <<- NULL # value set to !NA
   }
   get <- function() x
-  setsolve <- function(solve) s <<- solve
-  getsolve <- function() s
+  setsolve <- function(cacheSolve) val <<- cacheSolve
+  getsolve <- function() val
   list(set = set, get = get,
        setsolve = setsolve,
        getsolve = getsolve)
